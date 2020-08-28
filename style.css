@@ -1,0 +1,193 @@
+@font-face {
+    font-family: Avenir;
+    src: url(avenir_light.otf);
+}
+
+body {
+	margin: 0;
+	font-family: 'Avenir', sans-serif;
+    overflow: hidden;
+	overscroll-behavior: none;
+}
+
+/* https://stackoverflow.com/questions/6370690/media-queries-how-to-target-desktop-tablet-and-mobile */
+
+/* https://stackoverflow.com/questions/12469875/how-to-code-css-media-queries-targeting-all-mobile-devices-and-tablets/42835826#42835826 */
+
+/* desktop */
+#open, canvas {
+    display: none;
+}
+    
+#desk{
+    position: absolute;
+    z-index: 2;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height:100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: conic-gradient(from 25deg, #fff 0%, #f1f1f1 100%);
+}
+    
+#desk > div > p {
+    color: #777;
+    margin-top: 40%;
+    font-size: 30px;
+    font-family: 'Avenir', sans-serif;
+    text-align: center;
+}
+
+/* mobile */
+
+@media only screen and (pointer:coarse) {
+
+button {
+	cursor: pointer;
+    font-family: 'Spectral', serif;
+    font-size: 1.7em;
+	background: transparent;
+	color: #fff;
+    border: none;
+	text-decoration: underline;
+}
+
+canvas {
+	display: block;
+}
+
+#open {
+	position: absolute;
+	z-index: 2;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	display: block;
+	opacity: 1;
+    text-align: left;
+}
+
+#open > div {
+    padding: 5% 0 0 10%;
+}
+
+#links, .close {
+    position: absolute;
+    right: 10%; 
+    bottom: 5%;
+    text-align: right;
+}
+
+#how {
+	display: none;
+    position: absolute;
+	z-index: 1;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+    align-items: center;
+    text-align: left; 
+}
+
+#how > div {
+    padding: 0 0 0 10%;
+    margin-right: 10%;
+}
+
+#q {
+    font-family: 'Avenir', sans-serif;
+    font-size: 1.1em;
+}
+
+#open h1 {
+    font-size: 3em;
+    margin: 30% 0;
+    display: flex;
+    align-items: center;
+    position: relative;
+}
+
+#how h2 {
+    font-family: 'Spectral', serif;
+    font-size: 2em;
+    padding-bottom: 5%
+}
+
+p {
+	font-size: 1.5em;
+    font-family: 'Spectral', serif;
+}
+
+#mob {
+    display: block;
+}
+
+#desk {
+    display: none;
+}
+
+/* https://codepen.io/jmelgoza/pen/jEaGYg*/
+
+@-webkit-keyframes fadeIn { from { opacity:0; } to { opacity:1; } }
+@-moz-keyframes fadeIn { from { opacity:0; } to { opacity:1; } }
+@keyframes fadeIn { from { opacity:0; } to { opacity:1; } }
+
+.fade-in {
+    opacity:0;  /* make things invisible upon start */
+    -webkit-animation:fadeIn ease-in 1;  /* call our keyframe named fadeIn, use animattion ease-in and repeat it only 1 time */
+    -moz-animation:fadeIn ease-in 1;
+    animation:fadeIn ease-in 1;
+
+    -webkit-animation-fill-mode:forwards;  /* this makes sure that after animation is done we remain at the last keyframe value (opacity: 1)*/
+    -moz-animation-fill-mode:forwards;
+    animation-fill-mode:forwards;
+
+    -webkit-animation-duration:1s;
+    -moz-animation-duration:1s;
+    animation-duration:1s;
+}
+
+.fade-in.one {
+    -webkit-animation-delay: 0.5s;
+    -moz-animation-delay: 0.5s;
+    animation-delay: 0.5s;
+}
+
+.fade-in.two {
+    -webkit-animation-delay: 1.1s;
+    -moz-animation-delay:1.1s;
+    animation-delay: 1.1s;
+}
+
+.fade-in.three {
+    -webkit-animation-delay: 1.6s;
+    -moz-animation-delay: 1.6s;
+    animation-delay: 1.6s;
+}
+}
+
+/* mobile landscape */
+@media only screen and (orientation:landscape){
+    
+    #open > div {
+        padding-top: 2%;
+    }
+    
+    #open h1 {
+        font-size: 3em;
+        margin: 2% 0;
+    }
+    
+    #how h2 {
+        padding: 0;
+    }
+    
+    #mob {
+        display: none;
+    }
+
+}
